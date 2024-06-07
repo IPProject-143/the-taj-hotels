@@ -1,0 +1,85 @@
+.preloader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: #77b3d4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s all ease;
+    z-index: 6969696969696969696969;
+    pointer-events: none;
+}
+
+.cloud1, .cloud2, .cloud3 {
+    height: 100px;
+    position: absolute;
+    right: 0%;
+}
+
+.cloud1 {
+    top: 25%;
+    transform: translate(100%, -25%);
+    animation: clouds 3s ease infinite 1.5s;
+}
+
+.cloud2 {
+    top: 50%;
+    transform: translate(100%, -50%);
+    animation: clouds 3s ease infinite 1s;
+}
+
+.cloud3 {
+    top: 75%;
+    transform: translate(100%, -75%);
+    animation: clouds 3s ease infinite 2s;
+}
+
+.airplane {
+    height: 200px;
+    animation: airplane 1s alternate infinite;
+    z-index: 2;
+}
+
+.preloader h3 {
+    position: absolute;
+    top: 75%;
+    transform: translateY(-75%);
+    color: white;
+    font-size: 45px;
+}
+
+.preloader-finish {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes airplane {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(30px);
+    }
+}
+
+@keyframes clouds {
+    from {
+        right: 0;
+    }
+
+
+    to {
+        right: 130%;
+    }
+}
+
+.boom {
+    display: none;
+}
+
+.overflow {
+    overflow: hidden;
+}

@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.69s;
+  padding: 40px 100px;
+  z-index: 2;
+}
+
+header.sticky {
+  padding: 5px 100px;
+  background: #fff;
+  box-shadow: 0px 10px 25px 0px rgb(121, 121, 121);
+}
+
+header .logo {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.69s;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+header .logo svg {
+  width: 100px;
+  height: 93px;
+  transition: 0.69s;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+
+header li {
+  position: relative;
+  list-style: none;
+}
+
+header ul li a {
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 500;
+  transition: 0.69s;
+  padding-bottom: 3px;
+  text-transform: uppercase;
+}
+
+header.sticky .logo {
+  color: #000;
+}
+
+header.sticky ul li a {
+  color: #000;
+}
+
+.underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.4s ease-out;
+}
+
+.underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+header.sticky .underline-animation::after {
+  background-color: #000;
+}
+
+.special {
+  border: 2px solid white;
+  padding: 10px 25px;
+  transition: all 0.4s;
+}
+
+.special:hover {
+  color: #000;
+  border: 2px solid white;
+  background-color: white;
+}
+
+header.sticky .special {
+  border: 2px solid black;
+}
+
+header.sticky .special:hover {
+  background-color: #000;
+  color: white;
+}
+
+header .user {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border-radius: 50%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  transition: 0.69s all;
+}
+
+header .user:hover {
+  background-color: transparent;
+  color: white;
+}
+
+header.sticky .user {
+  background-color: black;
+  color: white;
+}
+
+header.sticky .user:hover {
+  background-color: white;
+  color: black;
+}

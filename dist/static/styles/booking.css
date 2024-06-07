@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --arrow-bg: rgba(255, 255, 255, 0.3);
+  --arrow-icon: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgDaDBzi8-go6kZzdpx3f0KekPryF7GfjWqw&s);
+  --option-bg: white;
+  --select-bg: rgba(255, 255, 255, 0.2);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.69s;
+  padding: 40px 100px;
+  z-index: 69;
+}
+
+header.sticky {
+  padding: 5px 100px;
+  background: #fff;
+}
+
+header .logo {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.69s;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+header .logo svg {
+  width: 100px;
+  height: 93px;
+  transition: 0.69s;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+
+header li {
+  position: relative;
+  list-style: none;
+}
+
+header ul li a {
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 500;
+  transition: 0.69s;
+  padding-bottom: 3px;
+  text-transform: uppercase;
+}
+
+header.sticky .logo {
+  color: #000;
+}
+
+header.sticky ul li a {
+  color: #000;
+}
+
+.underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.4s ease-out;
+}
+
+.underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+header.sticky .underline-animation::after {
+  background-color: #000;
+}
+
+.special {
+  border: 2px solid white;
+  padding: 10px 25px;
+  transition: all 0.4s;
+}
+
+.special:hover {
+  color: #000;
+  border: 2px solid white;
+  background-color: white;
+}
+
+header.sticky .special {
+  border: 2px solid black;
+}
+
+header.sticky .special:hover {
+  background-color: #000;
+  color: white;
+}
+
+header .user {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border-radius: 50%;
+  color: black;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.69s all;
+}
+
+header .user:hover {
+  background-color: transparent;
+  color: white;
+}
+
+header.sticky .user {
+  background-color: black;
+  color: white;
+}
+
+header.sticky .user:hover {
+  background-color: white;
+  color: black;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.bg::after {
+  z-index: 2;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.bg img {
+  width: 100%;
+}
+
+form {
+  height: 69vh;
+  width: 35vw;
+  position: absolute;
+  top: 43%;
+  left: 25%;
+  transform: translate(-25%, -25%);
+  z-index: 69;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.form__group {
+  position: relative;
+  width: 80%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #000;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: -5px;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  border-bottom: 1px solid black;
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: -10px;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: black;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+
+.form-control {
+  font-size: 18px;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 10px;
+}
+
+input[type="date"] {
+  padding: 10px;
+  font-family: "Poppins", monospace;
+  font-size: 17px;
+  border: 1px solid grey;
+  outline: none;
+  border-radius: 5px;
+}
+
+input[type="date"]:focus {
+  border: 1px solid black;
+}
+
+input[type="date"]:valid {
+  border: 1px solid black;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: #ffffff;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.dates {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: var(--form-background);
+  /* Not removed via appearance */
+  margin: 0;
+  display: grid;
+  place-content: center;
+  height: 20px;
+  width: 20px;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em black;
+  /* Windows High Contrast Mode */
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+  outline: max(2px, 0.15em) solid currentColor;
+  outline-offset: max(2px, 0.15em);
+}
+
+.bok {
+  width: 169px;
+  padding: 10px 15px;
+  border-radius: 35px;
+  outline: none;
+  font-size: 16px;
+  border: 1px solid black;
+  transition: 0.3s all ease-in-out;
+  color: white;
+  background-color: black;
+  font-weight: 600;
+  font-family: "Poppins";
+  cursor: pointer;
+}
+
+.bok:hover {
+  color: black;
+  background-color: transparent;
+}
+
+.choices {
+  display: flex;
+  width: 82%;
+  gap: 10px;
+}
+
+.choices select:nth-child(1) {
+  width: 80%;
+}
+
+select {
+  /* Reset */
+  appearance: none;
+  border: 1px solid black;
+  outline: 0;
+  font-family: "Poppins";
+  /* Personalize */
+  width: 33%;
+  padding: 10px 15px;
+  background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em, white;
+  color: black;
+  border-radius: 0.25em;
+  cursor: pointer;
+  /* Remove IE arrow */
+  /* Remove focus outline */
+  /* <option> colors */
+}
+select::-ms-expand {
+  display: none;
+}
+select:focus {
+  outline: none;
+}
+select option {
+  color: inherit;
+  background-color: var(--option-bg);
+}

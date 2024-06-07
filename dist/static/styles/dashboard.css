@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.69s;
+  padding: 40px 100px;
+  z-index: 2;
+}
+
+header.sticky {
+  padding: 5px 100px;
+  background: #fff;
+}
+
+header .logo {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.69s;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+header .logo svg {
+  width: 100px;
+  height: 93px;
+  transition: 0.69s;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+
+header li {
+  position: relative;
+  list-style: none;
+}
+
+header ul li a {
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 500;
+  transition: 0.69s;
+  padding-bottom: 3px;
+  text-transform: uppercase;
+}
+
+header.sticky .logo {
+  color: #000;
+}
+
+header.sticky ul li a {
+  color: #000;
+}
+
+.underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.4s ease-out;
+}
+
+.underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+header.sticky .underline-animation::after {
+  background-color: #000;
+}
+
+.special {
+  border: 2px solid white;
+  padding: 10px 25px;
+  transition: all 0.4s;
+}
+
+.special:hover {
+  color: #000;
+  border: 2px solid white;
+  background-color: white;
+}
+
+header.sticky .special {
+  border: 2px solid black;
+}
+
+header.sticky .special:hover {
+  background-color: #000;
+  color: white;
+}
+
+header .user {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border-radius: 50%;
+  color: black;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.69s all;
+}
+
+header .user:hover {
+  background-color: transparent;
+  color: white;
+}
+
+header.sticky .user {
+  background-color: black;
+  color: white;
+}
+
+header.sticky .user:hover {
+  background-color: white;
+  color: black;
+}
+
+.dashboard {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 55% 45%;
+}
+
+.dashboard .user-details {
+  grid-column: 1 / 2;
+  position: relative;
+  margin: 10px 25px;
+  border: 1px rgba(105, 105, 105, 1) solid;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dashboard .user-details .details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.dashboard .user-details .title {
+  color: rgba(105, 105, 105, 1);
+  position: absolute;
+  top: -5%;
+  left: 10%;
+  font-size: 20px;
+  background-color: white;
+  padding: 0 10px;
+}
+
+.dashboard .user-details .details .container:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dashboard .user-details .details .container .cp {
+  width: 169px;
+
+  padding: 10px 15px;
+  border-radius: 35px;
+  outline: none;
+  font-size: 16px;
+  border: 1px solid black;
+  transition: 0.3s all ease-in-out;
+  color: white;
+  background-color: black;
+  font-family: "Poppins";
+  cursor: pointer;
+}
+
+.dashboard .user-details .details .container .cp:hover {
+  color: black;
+  background-color: transparent;
+}
+
+.dashboard .user-details .icon {
+  height: 145px;
+  width: 145px;
+}
+
+.dashboard .user-details .details .container .buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.dashboard .news {
+  grid-column: 1 / 2;
+  position: relative;
+  margin: 10px 25px;
+  padding: 5px;
+  border: 1px rgba(105, 105, 105, 1) solid;
+  border-radius: 35px;
+}
+
+.dashboard .news .title {
+  color: rgba(105, 105, 105, 1);
+  position: absolute;
+  top: -6%;
+  left: 10%;
+  font-size: 20px;
+  background-color: white;
+  padding: 0 10px;
+}
+
+.carousel_items {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.carousel_item h1 {
+  margin-top: 10px;
+  padding-bottom: 18px;
+}
+
+.carousel_item {
+  min-width: 100%;
+  height: 31vh;
+  padding: 20px 25px;
+  transition: all 0.5s ease-in-out;
+  border-radius: 35px;
+}
+
+.dashboard .hotels {
+  grid-column: 2 / 3;
+  grid-row: 1 / span 2;
+  padding: 10px 20px;
+}
+
+.dashboard .hotels .content {
+  border: 1px solid grey;
+  border-radius: 35px;
+  height: 100%;
+  width: 100%;
+  padding: 15px 20px;
+}
+
+.dashboard .hotels .content select {
+  width: 100%;
+  font-family: "Poppins";
+  font-size: 16px;
+  padding: 10px 15px;
+  outline: none;
+  border-radius: 35px;
+}
+
+.hotels-div {
+  padding-top: 15px;
+  font-size: 18px;
+}

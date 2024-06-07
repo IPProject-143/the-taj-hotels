@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Taj: Get in touch with our team!</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}" />
+    <link rel="stylesheet" href="{% static 'styles/get-in-touch.css' %}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <body>
+    <div class="exit">
+      <i class="fa-solid fa-arrow-left fa-xl"></i>
+    </div>
+    <section
+      class="section-bg"
+      style="background-image: url(https://i.ibb.co/9p3Cnk9/slider-2.jpg)"
+      data-scroll-index="7"
+    >
+      <div class="overlay pt-100 pb-100">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 d-flex align-items-center">
+              <div class="contact-info">
+                <h2 class="contact-title">Have Any Questions?</h2>
+                <p>
+                  Get in touch with our team, who work 24/7 just for your own comfort and happiness!
+                </p>
+                <ul class="contact-info">
+                  <li>
+                    <div class="info-left">
+                      <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="info-right">
+                      <h4>+91 90XXXXXXXX</h4>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="info-left">
+                      <i class="fas fa-at"></i>
+                    </div>
+                    <div class="info-right">
+                      <h4>ipprojectnoreply@gmail.com</h4>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="info-left">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-right">
+                      <h4>The Taj Hotels</h4>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center">
+              <div class="contact-form">
+                <!--Contact Form-->
+                <form id="contact-form" action="{% url 'get' %}" method="post">
+                    {% csrf_token %}
+                  <input type="hidden" name="form-name" value="contactForm" />
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          name="name"
+                          class="form-control"
+                          id="first-name"
+                          placeholder="Enter Your Name *"
+                          required="required"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input
+                          type="email"
+                          name="email"
+                          class="form-control"
+                          id="email"
+                          placeholder="Enter Your Email *"
+                          required="required"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <textarea
+                          rows="4"
+                          name="message"
+                          class="form-control"
+                          id="description"
+                          placeholder="Enter Your Message *"
+                          required="required"
+                        ></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <!--contact button-->
+                      <button class="btn-big btn btn-bg">
+                        Send Us <i class="fas fa-arrow-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="{% static 'js/get-in-touch.js' %}"></script>
+  </body>
+</html>
