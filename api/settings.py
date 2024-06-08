@@ -82,14 +82,13 @@ WSGI_APPLICATION = 'api.wsgi.app'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'taj-hotels',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': 'localhost'
+        'PASSWORD': 'OrnAlfkMhKjeJTUtFbvcNQSFtAnKyMLB',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': '58943'
     }
 }
-
-DATABASES["default"] = dj_database_url.config()
 
 
 # Password validation
